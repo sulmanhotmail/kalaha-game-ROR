@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row text-center">
+    <% if @winner %>
+      <h1><%= @player %> WON!!!</h1>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+          <button id="b12" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[12]==0 %>><%= @out[12] %></button>
+          <button id="b11" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[11]==0 %>><%= @out[11] %></button>
+          <button id="b10" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[10]==0 %>><%= @out[10] %></button>
+          <button id="b9" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[9]==0 %>><%= @out[9] %></button>
+          <button id="b8" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[8]==0 %>><%= @out[8] %></button>
+          <button id="b7" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[7]==0 %>><%= @out[7] %></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2 text-center">
+          <button class="btn btn-success" disabled="disabled"><%= @out[13] %></button>
+        </div>
+        <div class="col-xs-8 text-center">
+          <h3>Turn of <%= @player %></h3>
+        </div>
+        <div class="col-xs-2 text-center">
+          <button class="btn btn-success" disabled="disabled"><%= @out[6] %></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 text-center">
+          <button id="b0" class="btn btn-primary" <%= "disabled" if @player==:P2 || @out[0]==0 %>><%= @out[0] %></button>
+          <button id="b1" class="btn btn-primary" <%= "disabled" if @player==:P2 || @out[1]==0 %>><%= @out[1] %></button>
+          <button id="b2" class="btn btn-primary" <%= "disabled" if @player==:P2 || @out[2]==0 %>><%= @out[2] %></button>
+          <button id="b3" class="btn btn-primary" <%= "disabled" if @player==:P2 || @out[3]==0 %>><%= @out[3] %></button>
+          <button id="b4" class="btn btn-primary" <%= "disabled" if @player==:P2 || @out[4]==0 %>><%= @out[4] %></button>
+          <button id="b5" class="btn btn-primary" <%= "disabled" if @player==:P2 || @out[5]==0 %>><%= @out[5] %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= form_tag home_temp_path do %>
+<%= number_field_tag :my_input, id: "my_input" %>
+<%= submit_tag "Send input", id: "send_input" %>
+<% end %>
+<br/>
+<div class="container">
+  <div class="row text-center">
+    <%= form_tag home_reset_path do %>
+    <%= submit_tag "Reset Game", id: "reset", class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#b0').click(function(){
+    document.getElementById('my_input').value=0;
+    document.forms[0].submit();
+  });
+  $('#b1').click(function(){
+    document.getElementById('my_input').value=1;
+    document.forms[0].submit();
+  });
+  $('#b2').click(function(){
+    document.getElementById('my_input').value=2;
+    document.forms[0].submit();
+  });
+  $('#b3').click(function(){
+    document.getElementById('my_input').value=3;
+    document.forms[0].submit();
+  });
+  $('#b4').click(function(){
+    document.getElementById('my_input').value=4;
+    document.forms[0].submit();
+  });
+  $('#b5').click(function(){
+    document.getElementById('my_input').value=5;
+    document.forms[0].submit();
+  });
+  $('#b7').click(function(){
+    document.getElementById('my_input').value=7;
+    document.forms[0].submit();
+  });
+  $('#b8').click(function(){
+    document.getElementById('my_input').value=8;
+    document.forms[0].submit();
+  });
+  $('#b9').click(function(){
+    document.getElementById('my_input').value=9;
+    document.forms[0].submit();
+  });
+  $('#b10').click(function(){
+    document.getElementById('my_input').value=10;
+    document.forms[0].submit();
+  });
+  $('#b11').click(function(){
+    document.getElementById('my_input').value=11;
+    document.forms[0].submit();
+  });
+  $('#b12').click(function(){
+    document.getElementById('my_input').value=12;
+    document.forms[0].submit();
+  });
+</script>
