@@ -1,13 +1,20 @@
 <div class="container">
   <div class="row text-center">
     <% if @winner %>
-      <h1><%= @player %> WON!!!</h1>
+      <h1>
+      <% if @player==:P1 %>
+      Player 1
+      <% else %>
+      Player 2
+      <% end %>
+      WON!!!
+      </h1>
     <% end %>
   </div>
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-xs-6 col-xs-offset-3">
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2 text-center">
           <button id="b12" class="btn btn-primary" <%= "disabled" if @player==:P1 || @out[12]==0 %>><%= @out[12] %></button>
@@ -23,7 +30,13 @@
           <button class="btn btn-success" disabled="disabled"><%= @out[13] %></button>
         </div>
         <div class="col-xs-8 text-center">
-          <h3>Turn of <%= @player %></h3>
+          <h3>Turn of
+          <% if @player==:P1 %>
+          Player 1
+          <% else %>
+          Player 2
+          <% end %>
+          </h3>
         </div>
         <div class="col-xs-2 text-center">
           <button class="btn btn-success" disabled="disabled"><%= @out[6] %></button>
@@ -55,6 +68,7 @@
     <% end %>
   </div>
 </div>
+<%= render "readme" %>
 
 <script type="text/javascript">
   $('#b0').click(function(){
