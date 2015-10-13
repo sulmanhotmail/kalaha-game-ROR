@@ -17,7 +17,7 @@ class Game
 
   attr_reader :stores, :history, :current_player, :num_seeds
 
-  # Initializes a new Kalah engine, optionally with the default number of seeds in each house.
+  # Initializes a new engine, optionally with the default number of seeds in each house.
   def initialize(num_seeds = 6)
     @stores = Array.new(NUM_HOUSES * 2 + 2, num_seeds)
     @stores[STORE_INDEX_P1] = 0
@@ -83,11 +83,11 @@ class Game
       # Move opponent's seeds to current player's store.
       range, store = 0
       if @current_player == :P1
-        range = player_1_houses
-        store = STORE_INDEX_P2
-      else
         range = player_2_houses
         store = STORE_INDEX_P1
+      else
+        range = player_1_houses
+        store = STORE_INDEX_P2
       end
 
       range.each do |i|
@@ -150,27 +150,28 @@ class Game
     (STORE_INDEX_P1 + 1)..(STORE_INDEX_P2 - 1)
   end
 
-  # Prints the Kalah board
-  def to_s
-    # Combine p2 (top) and p1 (bot) houses, and stores (mid)
-    top = "   "
-    mid = ""
-    bot = "   "
-    @stores.each_with_index do |v, i|
-      if i == STORE_INDEX_P1
-        mid << "%02d\n" % v
-      elsif i == STORE_INDEX_P2
-        mid.insert(0, "\n%02d " % v)
-      elsif i > STORE_INDEX_P1
-        top.insert(3, "%02d " % v)
-      else
-        bot << "%02d " % v
-        mid << "   "
-      end
-    end
+  # Prints the board
+  # for console testing
+  # def to_s
+  #   # Combine p2 (top) and p1 (bot) houses, and stores (mid)
+  #   top = "   "
+  #   mid = ""
+  #   bot = "   "
+  #   @stores.each_with_index do |v, i|
+  #     if i == STORE_INDEX_P1
+  #       mid << "%02d\n" % v
+  #     elsif i == STORE_INDEX_P2
+  #       mid.insert(0, "\n%02d " % v)
+  #     elsif i > STORE_INDEX_P1
+  #       top.insert(3, "%02d " % v)
+  #     else
+  #       bot << "%02d " % v
+  #       mid << "   "
+  #     end
+  #   end
 
-    top << mid << bot
+  #   top << mid << bot
 
-  end
+  # end
 
 end

@@ -26,4 +26,4 @@ contains the front-end code of the game
 contains the code to call game class for the front end to use
 
 ### See it in action
-https://glacial-harbor-2278.herokuapp.com/
+https://game-sulman.herokuapp.com/
