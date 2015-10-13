@@ -24,6 +24,9 @@ gem 'jquery-turbolinks'
 # for dotenv
 gem 'dotenv-rails'
 
+# for toastr notifications
+gem 'toastr-rails'
+
 
 group :development, :test do
   gem 'sqlite3'
