@@ -1,4 +1,4 @@
-# Game Test
+# KALAHA GAME
 ### Board Setup
 Each of the two players has his six pits in front of him. To the right of the six pits, each player has a larger pit. In each of the six round pits are put six stones when the game starts.
 ### Rules
